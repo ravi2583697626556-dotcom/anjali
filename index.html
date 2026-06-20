@@ -7,44 +7,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-pink) 0%, var(--bg-peach) 100%);
+  }
+  .splash-container {
+    text-align: center;
+    animation: popIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  h1 {
+    font-family: 'Baloo 2', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-size: clamp(28px, 6vw, 36px);
+  }
+  @keyframes popIn{
+    from{ opacity:0; transform:translateY(10px) scale(0.97); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+</style>
 </head>
 <body>
-<audio id="bgMusic" src="audio.mp3" autoplay loop></audio>
 
-<div id="startOverlay" class="start-overlay">
-  <button id="startBtn" class="btn-primary" style="font-size: 18px; padding: 16px 32px; box-shadow: 0 15px 25px -10px rgba(255,79,129,0.7);">Tap to Open Diary 🌸</button>
+<div class="splash-container">
+  <h1>Anjali ki River Diaries 🌊</h1>
+  <button class="btn-primary" style="font-size: 18px; padding: 16px 32px; box-shadow: 0 15px 25px -10px rgba(255,79,129,0.7);" onclick="window.location.href='diary.html'">Tap to Open Diary 🌸</button>
 </div>
-
-<canvas id="confetti"></canvas>
-
-<div class="page-header">
-  <h2>Anjali ki River Diaries 🌊</h2>
-  <p>10 pal, 10 vibes — ek dum cute photo journey ✨</p>
-</div>
-
-<div class="card">
-  <div class="dots" id="dots"></div>
-
-  <div class="page-content" id="pageContent">
-    <div class="photo-frame">
-      <img id="photo" src="img_10.webp" alt="Anjali">
-    </div>
-
-    <span class="eyebrow" id="eyebrow"></span>
-    <h1 id="headline"></h1>
-    <p class="sub" id="caption"></p>
-
-    <div class="meter-label"><span>Cuteness Meter</span><span id="meterText">10%</span></div>
-    <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
-  </div>
-
-  <div class="nav-row">
-    <button id="backBtn" class="btn-secondary" onclick="prevPage()">← Back</button>
-    <button id="nextBtn" class="btn-primary" onclick="nextPage()">Next →</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
