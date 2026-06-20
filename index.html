@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjali ki River Diaries 🌊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="bgMusic" src="audio.mp3" autoplay loop></audio>
+
+<canvas id="confetti"></canvas>
+
+<div class="page-header">
+  <h2>Anjali ki River Diaries 🌊</h2>
+  <p>10 pal, 10 vibes — ek dum cute photo journey ✨</p>
+</div>
+
+<div class="card">
+  <div class="dots" id="dots"></div>
+
+  <div class="page-content" id="pageContent">
+    <div class="photo-frame">
+      <img id="photo" src="img_10.webp" alt="Anjali">
+    </div>
+
+    <span class="eyebrow" id="eyebrow"></span>
+    <h1 id="headline"></h1>
+    <p class="sub" id="caption"></p>
+
+    <div class="meter-label"><span>Cuteness Meter</span><span id="meterText">10%</span></div>
+    <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+  </div>
+
+  <div class="nav-row">
+    <button id="backBtn" class="btn-secondary" onclick="prevPage()">← Back</button>
+    <button id="nextBtn" class="btn-primary" onclick="nextPage()">Next →</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
