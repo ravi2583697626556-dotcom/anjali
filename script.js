@@ -208,3 +208,17 @@ document.body.addEventListener('click', () => {
     bgMusic.play().catch(e => console.log('Audio play failed:', e));
   }
 }, { once: true });
+
+const startBtn = document.getElementById('startBtn');
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    const overlay = document.getElementById('startOverlay');
+    if (overlay) {
+      overlay.classList.add('hidden');
+    }
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic && bgMusic.paused) {
+      bgMusic.play().catch(e => console.log('Audio play failed:', e));
+    }
+  });
+}
