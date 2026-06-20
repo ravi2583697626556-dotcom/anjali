@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anjali ki River Diaries 🌊</title>
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -29,7 +30,8 @@
   </div>
 </div>
 
-<audio id="bgMusic" src="audio.mp3" loop></audio>
+<!-- preload="none" prevents 404 errors if audio.mp3 is missing -->
+<audio id="bgMusic" src="audio.mp3" loop preload="none"></audio>
 
 <canvas id="confetti"></canvas>
 
@@ -43,6 +45,7 @@
 
   <div class="page-content" id="pageContent">
     <div class="photo-frame">
+      <!-- src set by JS; alt will also be updated by JS -->
       <img id="photo" src="img_10.webp" alt="Anjali">
     </div>
 
@@ -55,12 +58,14 @@
   </div>
 
   <div class="nav-row">
-    <button id="backBtn" class="btn-secondary" onclick="prevPage()">← Back</button>
-    <button id="nextBtn" class="btn-primary" onclick="nextPage()">Next →</button>
+    <!-- ✅ No inline onclick — event listeners added in script.js (required when using defer) -->
+    <button id="backBtn" class="btn-secondary">← Back</button>
+    <button id="nextBtn" class="btn-primary">Next →</button>
   </div>
 </div>
 
-<script src="script.js"></script>
+<!-- ✅ defer: script runs after HTML is parsed, so all elements are available -->
+<script src="script.js" defer></script>
 
 </body>
 </html>

@@ -107,6 +107,8 @@ body{
   height:100%;
   object-fit:cover;
   display:block;
+  /* ✅ Smooth fade when switching between photos */
+  transition: opacity 0.3s ease;
 }
 
 .page-content{ animation:popIn 0.45s ease; }
@@ -216,6 +218,7 @@ canvas#confetti{
 @media (prefers-reduced-motion: reduce){
   .float-deco{ animation:none; display:none; }
   .page-content{ animation:none; }
+  .photo-frame img{ transition:none; }
 }
 
 .start-overlay {
