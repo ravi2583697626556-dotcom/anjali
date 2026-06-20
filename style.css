@@ -217,3 +217,18 @@ canvas#confetti{
   .float-deco{ animation:none; display:none; }
   .page-content{ animation:none; }
 }
+
+.start-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, var(--bg-pink) 0%, var(--bg-peach) 100%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+}
+.start-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

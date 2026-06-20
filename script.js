@@ -201,10 +201,16 @@ function animateConfetti(){
   }
 }
 
-// Audio fallback: many browsers block autoplay until user interaction
-document.body.addEventListener('click', () => {
-  const bgMusic = document.getElementById('bgMusic');
-  if(bgMusic && bgMusic.paused) {
+const startOverlay = document.getElementById('startOverlay');
+const startBtn = document.getElementById('startBtn');
+const bgMusic = document.getElementById('bgMusic');
+
+startBtn.addEventListener('click', () => {
+  if (bgMusic) {
     bgMusic.play().catch(e => console.log('Audio play failed:', e));
   }
-}, { once: true });
+  startOverlay.classList.add('hidden');
+  
+  // optionally remove it from DOM after transition
+  setTimeout(() => startOverlay.remove(), 600);
+});
